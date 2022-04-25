@@ -1,4 +1,5 @@
 ﻿using LetsHungry.Core.Models;
+using LetsHungry.DataAccessLayer.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,16 @@ namespace LetsHungry.DataAccessLayer
         public DbSet<Raiting> Raitings { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Rezervation> Rezervations { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new MenuConfiguration());
+            modelBuilder.ApplyConfiguration(new RestaurantConfiguration());
+            modelBuilder.ApplyConfiguration(new RezervationConfiguration());
+            modelBuilder.ApplyConfiguration(new RaitingConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new CommentConfiguration());
+        }
 
     }
 }

@@ -14,7 +14,7 @@ namespace LetsHungry.Core.Models
         public string Password { get; set; }
         public string Mail { get; set; }
         public string Tel { get; set; }
-        public ICollection<User> Users { get; set; }    
+        public ICollection<Comment> Comments { get; set; }    
         public ICollection<Raiting> Raitings { get; set; }
 
     }
