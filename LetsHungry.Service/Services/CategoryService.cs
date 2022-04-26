@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LetsHungry.Service.Services
 {
-    internal class CategoryService : Service<Category>, ICategoryService
+    public class CategoryService : Service<Category>, ICategoryService
     {
         public CategoryService(IUnitOfWork unit, IRepository<Category> repo) : base(unit, repo)
         {
