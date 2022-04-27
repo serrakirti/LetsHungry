@@ -19,6 +19,12 @@ namespace LetsHungry.API.Mapping
 
             CreateMap<Restaurant, RestaurantWithCategoriesDto>();
             CreateMap<RestaurantWithCategoriesDto, Restaurant>();
+
+            CreateMap<User, UserWithCommentsDto>();
+            CreateMap<UserWithCommentsDto, User>();
+
+            CreateMap<User, UserDto>();
+            CreateMap<UserDto, User>();
         }
     }
 }
