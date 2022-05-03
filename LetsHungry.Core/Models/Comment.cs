@@ -13,8 +13,9 @@ namespace LetsHungry.Core.Models
         public DateTime CommentDate { get; set; }
         public int UserId { get; set; }
         public virtual User User { get; set; }
-        public ICollection<Restaurant> Restaurants { get; set; }
-       
+        // public ICollection<Restaurant> Restaurants { get; set; }
+        public int RestaurantId { get; set; }
+        public virtual Restaurant Restaurant { get; set; }
 
     }
 }

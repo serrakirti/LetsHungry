@@ -1,5 +1,6 @@
 ﻿using LetsHungry.Core.Models;
 using LetsHungry.DataAccessLayer.Configurations;
+using LetsHungry.DataAccessLayer.Seeds;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,16 +18,20 @@ namespace LetsHungry.DataAccessLayer
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Restaurant> Restaurants { get; set; }
-        public DbSet<Menu> Menus { get; set; }
+        public DbSet<ProductCategory> Menus { get; set; }
         public DbSet<Raiting> Raitings { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Rezervation> Rezervations { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+
             {
+
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
+           // int i1=1;
+           // int i2=2;
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new MenuConfiguration());
             modelBuilder.ApplyConfiguration(new RestaurantConfiguration());
@@ -34,6 +39,8 @@ namespace LetsHungry.DataAccessLayer
             modelBuilder.ApplyConfiguration(new RaitingConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new CommentConfiguration());
+            //modelBuilder.ApplyConfiguration(new RestaurantSeed(new int[] {i1,i2}));
+            //modelBuilder.ApplyConfiguration(new CategorySeed(new int[] { i1, i2 }));
         }
 
     }

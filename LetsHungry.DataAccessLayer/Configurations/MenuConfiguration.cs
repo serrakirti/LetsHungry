@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace LetsHungry.DataAccessLayer.Configurations
 {
-    public class MenuConfiguration : IEntityTypeConfiguration<Menu>
+    public class MenuConfiguration : IEntityTypeConfiguration<ProductCategory>
     {
-        public void Configure(EntityTypeBuilder<Menu> builder)
+        public void Configure(EntityTypeBuilder<ProductCategory> builder)
         {
             builder.HasKey(x=>x.Id);
             builder.Property(x=>x.Name).IsRequired();

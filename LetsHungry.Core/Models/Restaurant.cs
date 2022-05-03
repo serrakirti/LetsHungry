@@ -15,13 +15,14 @@ namespace LetsHungry.Core.Models
         public string Tel { get; set; }
         public string Detail { get; set; }
         public int CategoryId { get; set; }
-        public int CommentId { get; set; }
-        public int MenuId { get; set; }
+        //public int CommentId { get; set; }
+        public int ProductCategoryId { get; set; }
         public virtual Category Category { get; set; }
-        public virtual Comment Comment { get; set; }
-        public virtual Menu Menu { get; set; }
+       // public virtual Comment Comment { get; set; }
+        public virtual ProductCategory ProductCategories { get; set; }
         public ICollection<Rezervation> Rezervations { get; set; }
         public ICollection<Raiting> Raitings { get; set; }
+        public ICollection<Comment> Comments { get; set; }
 
 
     }
