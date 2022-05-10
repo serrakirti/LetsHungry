@@ -18,7 +18,7 @@ namespace LetsHungry.DataAccessLayer
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Restaurant> Restaurants { get; set; }
-        public DbSet<ProductCategory> Menus { get; set; }
+        public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Raiting> Raitings { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Rezervation> Rezervations { get; set; }
@@ -33,7 +33,7 @@ namespace LetsHungry.DataAccessLayer
            // int i1=1;
            // int i2=2;
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new MenuConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new RestaurantConfiguration());
             modelBuilder.ApplyConfiguration(new RezervationConfiguration());
             modelBuilder.ApplyConfiguration(new RaitingConfiguration());

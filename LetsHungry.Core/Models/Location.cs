@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace LetsHungry.Core.Models
 {
-    public class ProductCategory
+    public class Location
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Product> Products { get; set; }
-
+        public ICollection<Restaurant> Restaurants { get; set; }
     }
 }

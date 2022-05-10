@@ -9,14 +9,13 @@ using System.Threading.Tasks;
 
 namespace LetsHungry.DataAccessLayer.Configurations
 {
-    public class MenuConfiguration : IEntityTypeConfiguration<ProductCategory>
+    public class ProductCategoryConfiguration : IEntityTypeConfiguration<ProductCategory>
     {
         public void Configure(EntityTypeBuilder<ProductCategory> builder)
         {
             builder.HasKey(x=>x.Id);
             builder.Property(x=>x.Name).IsRequired();
-            builder.Property(x => x.Stock).IsRequired();
-            builder.Property(x => x.Price).IsRequired().HasColumnType("decimal(18,2)");
+            
 
         }
     }
