@@ -22,7 +22,7 @@ namespace LetsHungry.DataAccessLayer.Configurations
             builder.Property(p => p.CategoryId).IsRequired();
             builder.Property(p => p.Address).IsRequired();
             builder.HasOne(p => p.Category).WithMany(c => c.Restaurants).HasForeignKey(p => p.CategoryId);
-            //builder.HasOne(p => p.Menu).WithMany(c => c.Restaurants).HasForeignKey(p => p.MenuId);
+            builder.HasOne(p => p.Location).WithMany(c => c.Restaurants).HasForeignKey(p => p.LocationId);
 
         }
     }

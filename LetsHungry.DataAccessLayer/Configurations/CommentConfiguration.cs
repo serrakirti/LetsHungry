@@ -18,7 +18,8 @@ namespace LetsHungry.DataAccessLayer.Configurations
             builder.Property(p => p.CommentDate).IsRequired();
             builder.Property(p => p.UserId).IsRequired();
             builder.HasOne(p => p.User).WithMany(c => c.Comments).HasForeignKey(p => p.UserId);
-            
+            builder.HasOne(p => p.Restaurant).WithMany(c => c.Comments).HasForeignKey(p => p.RestaurantId);
+
         }
     }
 }
