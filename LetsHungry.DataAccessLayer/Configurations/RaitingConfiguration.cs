@@ -16,6 +16,7 @@ namespace LetsHungry.DataAccessLayer.Configurations
             builder.HasKey(x=>x.Id);
             builder.Property(x=>x.UserId).IsRequired();
             builder.Property(x => x.RestaurantId).IsRequired();
+            builder.Property(x => x.HoldOnStar).IsRequired();
             builder.HasOne(p => p.User).WithMany(c => c.Raitings).HasForeignKey(p => p.UserId);
             builder.HasOne(p => p.Restaurant).WithMany(c => c.Raitings).HasForeignKey(p => p.RestaurantId);
 

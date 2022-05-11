@@ -2,7 +2,7 @@
 {
     public class UserWithCommentsDto:UserDto
     {
-        public ICollection<UserDto> Users { get; set; }
+        public ICollection<CommentDto> Comments { get; set; }
 
     }
 }

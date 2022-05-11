@@ -14,6 +14,12 @@ namespace LetsHungry.API.Mapping
             CreateMap<Restaurant, RestaurantDto>();
             CreateMap<RestaurantDto, Restaurant>();
 
+            CreateMap<Comment, CommentDto>();
+            CreateMap<CommentDto, Comment>();
+
+            CreateMap<User, UserDto>();
+            CreateMap<UserDto, User>();
+
             CreateMap<Category, CategoryWithRestaurantsDto>();
             CreateMap<CategoryWithRestaurantsDto, Category>();
 
@@ -23,8 +29,10 @@ namespace LetsHungry.API.Mapping
             CreateMap<User, UserWithCommentsDto>();
             CreateMap<UserWithCommentsDto, User>();
 
-            CreateMap<User, UserDto>();
-            CreateMap<UserDto, User>();
+            CreateMap<Comment, CommentWithUsersDto>();
+            CreateMap<CommentWithUsersDto, Comment>();
+
+       
         }
     }
 }

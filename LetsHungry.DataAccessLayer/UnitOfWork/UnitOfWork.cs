@@ -14,6 +14,7 @@ namespace LetsHungry.DataAccessLayer.UnitOfWork
         private readonly LetsHungryDbContext _db;
         private RestaurantRepository _restaurantRepository;
         private CategoryRepository _categoryRepository;
+        private CommentRepository _commentRepository;
         private UserRepository _userRepository;
 
         public UnitOfWork(LetsHungryDbContext db)
@@ -26,6 +27,8 @@ namespace LetsHungry.DataAccessLayer.UnitOfWork
         public ICategoryRepository Category => _categoryRepository ??= new CategoryRepository(_db);
 
         public IUserRepository User =>_userRepository ??=new UserRepository(_db);
+
+        public ICommentRepository Comment => _commentRepository ??= new CommentRepository(_db);
 
         public void Commit()
         {

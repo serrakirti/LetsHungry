@@ -12,6 +12,7 @@ namespace LetsHungry.Core.IntUnitOfWork
         IRestaurantRepository Restaurant{ get; }
         ICategoryRepository Category { get; }
         IUserRepository User { get; }
+        ICommentRepository Comment { get; }
         Task CommitAsync(); 
         void Commit(); 
     }

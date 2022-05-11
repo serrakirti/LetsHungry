@@ -16,6 +16,7 @@ namespace LetsHungry.Core.Models
         public int RestaurantId { get; set; }
         public virtual ProductCategory ProductCategories { get; set; }
         public virtual Restaurant Restaurants { get; set; }
+        public ICollection<Order> Orders { get; set; }
 
 
 

@@ -22,6 +22,9 @@ namespace LetsHungry.DataAccessLayer
         public DbSet<Raiting> Raitings { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Rezervation> Rezervations { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Product> Products { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
@@ -30,17 +33,29 @@ namespace LetsHungry.DataAccessLayer
 
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
-           // int i1=1;
-           // int i2=2;
+            int i1 = 1;
+            int i2 = 2;
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new RestaurantConfiguration());
             modelBuilder.ApplyConfiguration(new RezervationConfiguration());
             modelBuilder.ApplyConfiguration(new RaitingConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new LocationConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
             modelBuilder.ApplyConfiguration(new CommentConfiguration());
-            //modelBuilder.ApplyConfiguration(new RestaurantSeed(new int[] {i1,i2}));
-            //modelBuilder.ApplyConfiguration(new CategorySeed(new int[] { i1, i2 }));
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new RestaurantSeed(new int[] { i1, i2 }));
+            modelBuilder.ApplyConfiguration(new CategorySeed(new int[] { i1, i2 }));
+            modelBuilder.ApplyConfiguration(new CommentSeed(new int[] { i1, i2 }));
+            modelBuilder.ApplyConfiguration(new LocationSeed(new int[] { i1, i2 }));
+            modelBuilder.ApplyConfiguration(new RaitingSeed(new int[] { i1, i2 }));
+            modelBuilder.ApplyConfiguration(new ProductSeed(new int[] { i1, i2 }));
+            modelBuilder.ApplyConfiguration(new ProductCategorySeed(new int[] { i1, i2 }));
+            modelBuilder.ApplyConfiguration(new OrderSeed(new int[] { i1, i2 }));
+            modelBuilder.ApplyConfiguration(new RezervationSeed(new int[] { i1, i2 }));
+            modelBuilder.ApplyConfiguration(new UserSeed(new int[] { i1, i2 }));
         }
 
     }

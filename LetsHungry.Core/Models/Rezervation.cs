@@ -12,7 +12,9 @@ namespace LetsHungry.Core.Models
         public DateTime? RezervationDate { get; set; }
         public int Guest { get; set; }
         public int RestaurantId { get; set; }
+        public int OrderId { get; set; }
         public virtual Restaurant Restaurant { get; set; }
+        public virtual Order Order { get; set; }
 
 
     }
