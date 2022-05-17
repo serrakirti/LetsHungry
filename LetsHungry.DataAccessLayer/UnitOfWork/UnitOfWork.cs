@@ -14,8 +14,14 @@ namespace LetsHungry.DataAccessLayer.UnitOfWork
         private readonly LetsHungryDbContext _db;
         private RestaurantRepository _restaurantRepository;
         private CategoryRepository _categoryRepository;
+        private ProductCategoryRepository _productCategoryRepository;
+        private ProductRepository _productRepository;
         private CommentRepository _commentRepository;
         private UserRepository _userRepository;
+        private RaitingRepository _raitingRepository;
+        private OrderRepository _orderRepository;
+
+
 
         public UnitOfWork(LetsHungryDbContext db)
         {
@@ -29,6 +35,14 @@ namespace LetsHungry.DataAccessLayer.UnitOfWork
         public IUserRepository User =>_userRepository ??=new UserRepository(_db);
 
         public ICommentRepository Comment => _commentRepository ??= new CommentRepository(_db);
+
+        public IRaitingRepository Raiting => _raitingRepository ??= new RaitingRepository(_db);
+
+        public IProductCategoryRepository ProductCategory=> _productCategoryRepository ??= new ProductCategoryRepository(_db);
+
+        public IOrderRepository Order => _orderRepository ??= new OrderRepository(_db);
+
+        public IProductRepository Product => _productRepository ??= new ProductRepository(_db);
 
         public void Commit()
         {
