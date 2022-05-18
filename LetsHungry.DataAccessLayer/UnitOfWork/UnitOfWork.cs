@@ -17,6 +17,7 @@ namespace LetsHungry.DataAccessLayer.UnitOfWork
         private ProductCategoryRepository _productCategoryRepository;
         private ProductRepository _productRepository;
         private CommentRepository _commentRepository;
+        private RezervationRepository _rezervationRepository;
         private UserRepository _userRepository;
         private RaitingRepository _raitingRepository;
         private OrderRepository _orderRepository;
@@ -43,6 +44,8 @@ namespace LetsHungry.DataAccessLayer.UnitOfWork
         public IOrderRepository Order => _orderRepository ??= new OrderRepository(_db);
 
         public IProductRepository Product => _productRepository ??= new ProductRepository(_db);
+
+        public IRezervationRepository Rezervation => _rezervationRepository ??= new RezervationRepository(_db);
 
         public void Commit()
         {

@@ -14,6 +14,7 @@ namespace LetsHungry.Core.IntUnitOfWork
         IProductCategoryRepository ProductCategory { get; }
         IProductRepository Product { get; }
         IUserRepository User { get; }
+        IRezervationRepository Rezervation { get; }
         ICommentRepository Comment { get; }
         IRaitingRepository Raiting { get; }
         IOrderRepository Order { get; }

@@ -13,6 +13,12 @@ namespace LetsHungry.API.Controllers
     {
         private IProductService _proService;
         private IMapper _mapper;
+        public ProductController(IProductService proService, IMapper mapper)
+        {
+            _proService = proService;
+            _mapper = mapper;
+        }
+
         [HttpGet] //Select islemleri icin api kullanilan keyword dur.
         public async Task<IActionResult> GetAll()
         {

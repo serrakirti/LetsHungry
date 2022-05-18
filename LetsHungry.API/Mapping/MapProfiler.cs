@@ -29,11 +29,23 @@ namespace LetsHungry.API.Mapping
             CreateMap<Raiting, RaitingDto>();
             CreateMap<RaitingDto, Raiting>();
 
+            CreateMap<Order, OrderDto>();
+            CreateMap<OrderDto, Order>();
+
+            CreateMap<Rezervation, RezervationDto>();
+            CreateMap<RezervationDto, Rezervation>();
+
             CreateMap<Category, CategoryWithRestaurantsDto>();
             CreateMap<CategoryWithRestaurantsDto, Category>();
 
             CreateMap<Restaurant, RestaurantWithCategoriesDto>();
             CreateMap<RestaurantWithCategoriesDto, Restaurant>();
+
+            CreateMap<Rezervation, RezervationWithOrdersDto>();
+            CreateMap<RezervationWithOrdersDto, Rezervation>();
+
+            CreateMap<Order, OrderWithRezervationsDto>();
+            CreateMap<OrderWithRezervationsDto, Order>();
 
             CreateMap<ProductCategory, ProductCategoryWithProductsDto>();
             CreateMap<ProductCategoryWithProductsDto, ProductCategory>();
