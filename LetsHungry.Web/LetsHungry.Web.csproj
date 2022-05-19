@@ -19,6 +19,16 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LetsHungry.DataAccessLayer\LetsHungry.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\LetsHungry.Service\LetsHungry.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Restaurant\" />
   </ItemGroup>
 
 </Project>
